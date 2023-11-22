@@ -974,9 +974,23 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <script>
+        var passiveSupported = false;
+
+        try {
+            var options = Object.defineProperty({}, 'passive', {
+                get: function() {
+                    passiveSupported = true;
+                }
+            });
+
+            window.addEventListener('test', null, options);
+        } catch(err) {}
+
         document.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-        }, { passive: false });
+            if (!passiveSupported) {
+                e.preventDefault();
+            }
+        });
     </script>
     
 
