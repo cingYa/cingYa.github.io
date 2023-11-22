@@ -19,6 +19,7 @@
 
     <!-- 引入 Bootstrap 样式 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -42,7 +43,6 @@
         <div class="grid8"></div>
         <div class="grid9"></div>
     </div>
-
     <!-- ***** Main Menu Area Start ***** -->
     <!--<div class="mainMenu d-flex align-items-center justify-content-between">-->
         <!-- Close Icon -->
@@ -974,25 +974,11 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
     <script>
-       function enlargeImage(imageSrc) {
-            var modal = document.getElementById('enlargeImageModal');
-            var enlargedImg = document.getElementById('enlargedImg');
-
-            // 设置 Modal 中的图片源
-            enlargedImg.src = imageSrc;
-
-            // 显示 Modal
-            modal.style.display = 'flex';
-        }
-
-        // 点击 Modal 区域以外的地方关闭 Modal
-        window.onclick = function(event) {
-            var modal = document.getElementById('enlargeImageModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
     </script>
+    
 
 </body>
 

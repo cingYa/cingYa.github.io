@@ -1768,5 +1768,9 @@ img {
         margin-bottom: 30px;
     }
 }
+.drag-drop-item
+{
+  touch-action: none;
+}
 
 /* The end */
